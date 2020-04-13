@@ -1,0 +1,11 @@
+
+*.classpath
+*.ini
+*.project
+*.prefs
+*.dat
+*.log
+*.index
+*.class
+.metadata
+bin
