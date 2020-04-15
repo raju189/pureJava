@@ -1,0 +1,56 @@
+Class loader -> run-time-data Area -> execution engine (shared native method interface and native librarary)
+
+
+class loader.
+
+	load:
+		Bootstrap class loader:	
+			it loads rt.jar class.
+		extention class loader:
+			loads external classes from jre/lib/ext
+		Applicaiton class loader:
+			loads class or libirary from CLASSPATH, -cp.
+	
+	link:
+		Verify:
+			It verify byte code.
+		Prepare:
+			Memory for class level varibles.
+		Resolve:
+			All references of that class.
+
+		ClassDefNotFound execption posible.
+	
+	Initialize:
+		execute static blocks and inilization of actual asigned values.
+
+
+Run-time Data Areas:
+	Method area: (perm gen (metaspace from java 8)
+		Load Class Data or structure.
+		Constants and static members.
+	Head:
+		Holds objects
+	PC Registers:
+		hold programe counter for next instruction address.
+	Java Stacks
+		stack frame for each threads.
+		Note:
+			Frame contains Local Variable Area, Frame Data, Operant Stack (intermediate action )
+	Native Mehtod stacks:
+		holds Netive method stacks
+
+Exection engine:
+	Interpreter:
+		interpretes byte code and execute native code.
+		if methods calls multiple time. then it interprets every times. so (JIT generated native code once and Hotspot profile takes care)
+	JIT Compiler:
+		Making runtime code to ready execute and store in hotspot profile
+			Intermediate code generater -> code Optimizer -> Target code generator -> machice code/ Native code
+	Hotspot Profiler:
+		Keep eye on code.
+	GC:
+		Remove un referenced objects from old generation space.
+	Native  method interface (JNI) -> Native method libraries (.dll, .so)
+		 
+
