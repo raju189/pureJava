@@ -32,6 +32,24 @@ public class TestInstanceCount {
 		System.out.println("reference block count :" + EmployeeModel.getReferenceBlockCount());
 		System.out.println("constructor count :" + EmployeeModel.getConstructorCount());
 
+		// Ways to know type of instance
+		EmployeeModel childToParent = modelChild1;
+
+		System.out.println(" instance of direct parent :" + (model1 instanceof EmployeeModel));
+		System.out.println(" instance of child to parent :" + (modelChild1 instanceof EmployeeModel));
+		System.out.println(" getClass of child :" + (modelChild1.getClass()));
+		System.out.println(" getClass of child to parent :" + (childToParent.getClass()));
+
+		System.out.println(" isInstance() of class, direct parent :" + (EmployeeModel.class.isInstance(model1)));
+		System.out.println(" isInstance() of class, child to parent :" + (EmployeeModel.class.isInstance(modelChild1)));
+
+		
+		/**
+		 * instanceof, isInstance() are true: parent and child
+		 * 
+		 * getClass() is better to identify the class type.
+		 */
+		
 	}
 
 }
